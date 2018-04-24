@@ -39,7 +39,6 @@ motivations by determining the proportion of key words in language. (see more at
 In the data set, it was found that the class of the “Date” column was in factor. We changed the class into date as it was more appropriate for a “Date” column. If we were to get the minimum date while it is in factor, it would return the smallest day, only considering of the day such as 01-05-02. While if in the class Date, the minimum would return the smallest date, considering the month and year such as 01-01-02.
 After completing data cleaning on the data set, we are left with a total of 18,808 rows with 26 columns.
 
-=================================================================================================================================================
 
 # Results
 
