@@ -1,22 +1,22 @@
-*The social and linguistic dynamics of an on-line community.*
+#The social and linguistic dynamics of an on-line community.
 
 There is a theory in social science, that people adopt similar patterns of language use when they
 interact. (See, for example, Gonzales et al.1) This assignment will investigate whether this concept
 is evident for an online forum, where participants communicate with each other via conversations in
 a thread. 
 
-**Introduction**
+##Introduction
 
 The purpose is to evaluate the data set given of a forum, to determine if people communicate with each other in a thread using similar language pattern. We would also like to investigate if the language used between users of the thread or forum changes over time.
 From the data set, there was 32 columns and 20,000 rows of data consisting from year 2002 to 2011. The classes of the columns consist of integer, factor and numeric. 
 
-**Goals**
+##Goals
 
 1. Investigate whether members who are communicating directly with each other (via threads) use similar language, which may be different to other members of the forum.
 
 2. Investigate whether the language used changes over time. For example, does the proportion of language expressing optimism change?
 
-**Data**
+##Data##
 
 1. Data is taken from a real online forum and consists of the metadata and linguistic analysis of 20,000 posts over the years 2002 to 2011. The linguistic analysis was conducted using Linguistic Inquiry and Word Count (LIWC), which assesses the prevalence of certain thoughts, feelings and
 motivations by determining the proportion of key words in language. (see more at http://liwc.wpengine.com/wpcontent/uploads/2015/11/LIWC2015_LanguageManual.pdf)
@@ -25,7 +25,7 @@ motivations by determining the proportion of key words in language. (see more at
 ![Screenshot](pic.png)
 ![Screenshot](pic2.png)
 
-**Data Cleaning**
+##Data Cleaning
 
 1. We discovered that the data set consist of dirty data, which are anonymous users along with posts with zero word counts. As there are many anonymous users, we cannot differentiate if they are the same author or different authors, which means we would not be able to investigate the interaction of users properly. By removing the anonymous authors, we are left with 18,854 rows of data. 
 
@@ -41,14 +41,14 @@ After completing data cleaning on the data set, we are left with a total of 18,8
 
 ###########################################################################################
 
-*Results*
+#Results
 
-**Grouping**
-***Based on Thread ID***
+##Grouping
+###Based on Thread ID
 
 As this is a forum, each thread would be a topic in the forum, which means different thread would contain different topics. We can say that people would communicate on the same topic based on the thread itself. By grouping based on Thread ID, we are able to investigate the interactions between authors in a thread. From this, we can see that there are 260 unique Thread IDs in the data set. From the 260 unique Thread IDs, we take a sample of 3 Thread IDs which would be obtained randomly using R to avoid any sort of bias. The sample size of 3 would be a representation of the whole data and it is a manageable size as opposed to the whole data set. 
 
-***Level of Interaction in a Thread***
+###Level of Interaction in a Thread###
 
 From the sample of 3, we would like to investigate the level of interaction between members in a thread and which days of the week is most active in a thread. For this investigation, we assume that users in a same thread would interact with one another and would not reply to themselves, meaning a reply would come from a different author. As each post ID is unique, we also assume that the number of post indicates the level of interaction, where the greater the number of post, the greater the interaction between authors. We believe that a thread would grow from the beginning until the middle and decreases at the end of the thread lifespan.
 
@@ -66,7 +66,7 @@ Figure 1 Beeswarm 2
 ![Screenshot](b3.png)
 Figure 1 Beeswarm 3
 
-***Personal Concerns in each thread***
+###Personal Concerns in each thread###
 
 From our investigation above, we would like to further investigate which personal concerns weighs more on each individual thread. Based on the LIWC 2015 Language Manual we know that personal concerns include the column work, leisure, home, money and religion. We think that by doing this investigation, it will help us understand the trend of posts in each thread from the previous investigation. We used a bar chart to help visualise this investigation with the use of library plot_ly. The mean of each personal concerns for each thread is calculated, then grouped them in to the plot by the Thread ID. 
  
@@ -81,7 +81,7 @@ In Figure 3, we see that it is only active on Saturday till Tuesday, and in this
 
 In conclusion, the topic of work seems to be the most popular in these three threads while the topic of home is always the least or non-existence. Some threads may have a combination of multiple topics on personal concerns which are related to each other in the thread.
 
-***Analytical thinking of users in a thread***
+###Analytical thinking of users in a thread###
 
 We would like to determine the differences of analytical thinking of each user in each thread. Our assumptions are that for a topic, users would have different type of thinking, which would mean that the analytical thinking for each user will differ from each other. To determine if our assumption is accurate, we first find the mean of analytic for each user as there can be more than one post by a same user. By using a pie chart, we plot the mean of each author’s analytic thinking score for each of the sample Thread ID. The pie chart would be generated with the use of library(plotly).
 
@@ -96,7 +96,7 @@ Figure 6 Pie Chart 2
 ![Screenshot](pie3.png)
 Figure 7 Pie Chart 3
 
-***Based on Author ID***
+###Based on Author ID###
 
 Since different threads has different topics, the tone of a person would vary based on the topics. We would like to see if an author uses a different tone throughout the forum. Therefore, we’ve decided on using tone as a measurement in this investigation to determine if a person has a similar or different style of speaking in different threads. 
     
@@ -107,8 +107,8 @@ From the results, we can see that each author does not have a similar tone throu
 ![Screenshot](violin.png)
 Figure 8 Violin Plot
 
-**General Trend of Data Set**
-***Positive and Negative Emotion***
+##General Trend of Data Set
+###Positive and Negative Emotion
 
 From the data set, we would like to see the general trend of positive and negative emotions throughout the forum because we want to determine if the positive and negative emotions in user’s posts changes over time. The reason we choose positive and negative emotions is because we think that they affect what a user writes, how they write it and how much they write in a post.  For example, a user who is angry may use inappropriate words in the sentence, use capital letters to express his anger, or write more in a post.  Since the data set only consists of data from the year 2002 to 2011 we can only observe the trend from this range. 
 
@@ -118,7 +118,7 @@ From the graph, it can be seen that from 2002 to 2003, positive emotion decrease
 ![Screenshot](+-.png)
 Figure 9 Time series 1
 
-***Number of post per Year***
+###Number of post per Year
 
 We would like to determine the trend of posts in the forum as years goes by because we want to investigate the activeness of the forum. The forum is active if it always has a steady amount of posts made yearly and we would like to check if this forum is active or not. 
 
@@ -127,7 +127,7 @@ Based on the result, from the year 2002 to 2003, there is a decrease in number o
 ![Screenshot](post.png)
 Figure 10 Time series 2
 
-**Regression**
+##Regression
 
 Next, we would like to determine if positive and negative emotions have an effect on number of words in a post. More specifically, we would like to investigate our observation that people who have negative emotion tends to write more than those with positive emotion. To do this, we decided to do a regression of word count on positive and negative emotions to determine their relationship. 
 We are going to use the whole data set for this regression because there is little information found from individual threads for positive and negative emotions. 
@@ -146,7 +146,7 @@ Continuing from above, now we would like to determine the relationship of positi
 
 The result of the regression shows us that both social processes are good predictors of positive emotion as their p-values are less than 0.001. We can see that one unit increase in family decreases the positive emotions by 0.09453, while one unit increase in friend increases the positive emotions by 0.30368. By comparing the results of both regression, positive emotion and anger, we can see that family and friends have more effect on positive emotion rather than on anger.
 
-**Conclusion**
+##Conclusion
 
 In conclusion, each thread consists of topics specific to personal concerns where users would interact with each other depending on the topic of the thread. We can also say that users in the same thread have a similar style of analytical thinking. Each user in the forum would have a wide range of tone used in different topic depending on how many threads they are a part of. 
 
