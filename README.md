@@ -22,8 +22,8 @@ From the data set, there was 32 columns and 20,000 rows of data consisting from 
 motivations by determining the proportion of key words in language. (see more at http://liwc.wpengine.com/wpcontent/uploads/2015/11/LIWC2015_LanguageManual.pdf)
 
 
-![Screenshot](pic.png)
-![Screenshot](pic2.png)
+![Screenshot](img/pic.png)
+![Screenshot](img/pic2.png)
 
 ## Data Cleaning
 
@@ -56,20 +56,20 @@ For this investigation, we would require the days of the week from the “Date�
 From the plot, each dot represents the post ID which would tell us the number of post for the day. Since each post ID is unique, we assume that the closer the post ID is to each other, the closer the time interval between each post. We can see that each group of dots would mean that there is a discussion going on within that period. Since post ID always increases, we can determine which day of the week the thread has started and which has ended. As time goes by, we can see that the number of dots decreases until the final dot. Which tells us that from the beginning up till the middle, the number of post grows while from the middle till the end, the number of post stops growing. The day with the most number of dots indicates that the day is the most active of the week for that thread. 
 
 
-![Screenshot](b1.png)
+![Screenshot](img/b1.png)
 Figure 1 Beeswarm 1
 
-![Screenshot](b2.png)
+![Screenshot](img/b2.png)
 Figure 1 Beeswarm 2
 
-![Screenshot](b3.png)
+![Screenshot](img/b3.png)
 Figure 1 Beeswarm 3
 
 ### Personal Concerns in each thread
 
 From our investigation above, we would like to further investigate which personal concerns weighs more on each individual thread. Based on the LIWC 2015 Language Manual we know that personal concerns include the column work, leisure, home, money and religion. We think that by doing this investigation, it will help us understand the trend of posts in each thread from the previous investigation. We used a bar chart to help visualise this investigation with the use of library plot_ly. The mean of each personal concerns for each thread is calculated, then grouped them in to the plot by the Thread ID. 
  
-![Screenshot](ppron.png)
+![Screenshot](img/ppron.png)
 Figure 4 Bar chart
 
 Based on Figure 1, the pattern of posts in the thread is most active on workdays and minimal on the weekends and non-existence on Fridays. We can assume that this is because the topic is work related as from this investigation we can see that “Work” is the highest among all the other personal concerns. This could be a discussion thread on their working environment. 
@@ -86,13 +86,13 @@ We would like to determine the differences of analytical thinking of each user i
 
 Looking at the 3 pie charts of the sample Thread IDs, we can see that most of the users in each Thread have a close range in analytical thinking while only a minority of users differ from the majority. Thus, it can be said that users in each Thread ID have a similar analytical thinking. This could be because this may be a discussion forum and the majority have an agreement on the topic while the minority disagrees with the topic. Making the majority to have similar values in analytic while the minority have different values compared to the majority.
   
-![Screenshot](pie1.png)
+![Screenshot](img/pie1.png)
 Figure 5 Pie Chart 1 						
 
-![Screenshot](pie2.png)
+![Screenshot](img/pie2.png)
 Figure 6 Pie Chart 2
 
-![Screenshot](pie3.png)
+![Screenshot](img/pie3.png)
 Figure 7 Pie Chart 3
 
 ### Based on Author ID
@@ -103,7 +103,7 @@ We first get a sample of 10 random unique authors from the data set and going th
 
 From the results, we can see that each author does not have a similar tone throughout their post in different Threads. Each dot represents the mean from each thread for that author. As shown in the plot, each author has a wide range of tone throughout their posts in the forum. Although some dots are at the same mean of tone, we assume that the threads have a similar topic with each other. Therefore, the dots are together in a line. We can also see that some authors have a wider range of mean of tone, this may be because some authors have posted in more threads which leads to a variety of topics. 
 
-![Screenshot](violin.png)
+![Screenshot](img/violin.png)
 Figure 8 Violin Plot
 
 ## General Trend of Data Set
@@ -114,7 +114,7 @@ From the data set, we would like to see the general trend of positive and negati
 We used an R library called dygraph to plot a line chart of mean of positive and negative emotions over the years. Plotting the graph, we first calculate the mean of positive and negative emotions of the whole data set by year, as we are not certain that the number of post for each year are similar and mean will return the average. If sum was used, the outcome would be bias to the year with the most post. 
 From the graph, it can be seen that from 2002 to 2003, positive emotion decreases while negative emotion increase. However, for the other years, positive emotion is always higher than negative emotions, although it is not always in the increasing trend. From here, we can conclude that the overall emotions of users in this thread is positive. 
 
-![Screenshot](+-.png)
+![Screenshot](img/+-.png)
 Figure 9 Time series 1
 
 ### Number of post per Year
@@ -123,7 +123,7 @@ We would like to determine the trend of posts in the forum as years goes by beca
 
 Based on the result, from the year 2002 to 2003, there is a decrease in number of posts by around 100 posts and from year 2003 to 2006, there is a huge increase in number of posts made, especially from year 2004 to 2005 where the difference in post from 2003 to 2004 and 2004 to 2005 is almost 3000 number of post. This could be because there is an increase in number of users in the forum. However, from the year 2006 there is a steady decrease in the number of post and a slight increase after the year 2010. This may be because of non-active users who only posts a few times in the entire forum.
  
-![Screenshot](post.png)
+![Screenshot](img/post.png)
 Figure 10 Time series 2
 
 ## Regression
